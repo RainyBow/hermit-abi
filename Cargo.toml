@@ -1,0 +1,30 @@
+[dependencies.compiler_builtins]
+optional = true
+version = "0.1.0"
+
+[dependencies.core]
+optional = true
+package = "rustc-std-workspace-core"
+version = "1.0.0"
+
+[dependencies.libc]
+default-features = false
+version = "0.2.51"
+
+[features]
+default = []
+docs = []
+rustc-dep-of-std = ["core", "compiler_builtins/rustc-dep-of-std", "libc/rustc-dep-of-std"]
+
+[package]
+authors = ["Stefan Lankes"]
+categories = ["os"]
+description = "hermit-abi is small interface to call functions from the unikernel RustyHermit.\nIt is used to build the target `x86_64-unknown-hermit`.\n"
+keywords = ["unikernel", "libos"]
+license = "MIT/Apache-2.0"
+name = "hermit-abi"
+readme = "README.md"
+repository = "https://github.com/hermitcore/rusty-hermit"
+version = "0.1.7"
+[package.metadata.docs.rs]
+features = ["docs"]
